@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Élise & Robin en Indonésie 🇮🇩</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom, #ffe082, #ffcc80);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #ff7043;
+      color: white;
+    }
+    header img {
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    h1 {
+      margin-top: 1rem;
+    }
+    .timeline {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .day {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px dashed #ffab91;
+    }
+    .day:last-child {
+      border-bottom: none;
+    }
+    .day h2 {
+      color: #d84315;
+    }
+    .comment {
+      font-style: italic;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #ff7043;
+      color: white;
+      margin-top: 2rem;
+    }
+    /* Carrousel */
+    .carousel {
+      max-width: 900px;
+      margin: 2rem auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .carousel img {
+      width: 100%;
+      display: none;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .carousel .caption {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Votre photo -->
+    <img src="elise-robin.jpg" alt="Élise et Robin à Bali">
+    <h1>Le voyage fou d’Élise & Robin en Indonésie 🌴🐒</h1>
+    <p>Du 19 septembre au 3 octobre 2025</p>
+  </header>
+
+  <div class="timeline">
+    <div class="day">
+      <h2>Jour 1 – Vendredi 19 septembre</h2>
+      <p>✈️ Vol, arrivée à 18h40, soirée Canggu.</p>
+      <p class="comment">Encore propres et motivés… ça ne durera pas 😂</p>
+    </div>
+    <div class="day">
+      <h2>Jour 2 – Samedi 20 septembre</h2>
+      <p>😴 "ça dort lol" + Canggu / Kuta / Seminyak.</p>
+      <p class="comment">La vraie activité du jour : sieste professionnelle.</p>
+    </div>
+    <div class="day">
+      <h2>Jour 3 – Dimanche 21 septembre</h2>
+      <p>Encore des balades à Canggu, Kuta, Seminyak.</p>
+      <p class="comment">Test officiel des cocktails balinais 🍹.</p>
+    </div>
+    <div class="day">
+      <h2>Jours 4-5 – Ubud</h2>
+      <p>Promenades, attente de la "décision du petit poisson".</p>
+      <p class="comment">Mystère total. Peut-être un gourou ? Peut-être Nemo ? 🐠</p>
+    </div>
+    <div class="day">
+      <h2>Jour 6 – Mercredi 24 septembre</h2>
+      <p>Manger à "ma cantine" !!!!</p>
+      <p class="comment">On sent que Robin attendait ce moment depuis 3 mois.</p>
+    </div>
+    <div class="day">
+      <h2>Jour 7 – Jeudi 25 septembre</h2>
+      <p>Départ vers Gili Meno.</p>
+      <p class="comment">Premiers pas sur une île sans voiture : juste des vélos et des poules 🐓.</p>
+    </div>
+    <div class="day">
+      <h2>Jours 8-9 – Gili & retour</h2>
+      <p>Soirées giliiiiiiiii 🌙, petit run, réveil au coq.</p>
+      <p class="comment">Le coq : 1h, 2h, 3h, 4h du mat’… 🐔💀</p>
+    </div>
+    <div class="day">
+      <h2>Jour 10 – Dimanche 28 septembre</h2>
+      <p>Plongée à Labuan Bajo 🤿.</p>
+      <p class="comment">Élise cherche Némo, Robin cherche un bar après la plongée.</p>
+    </div>
+    <div class="day">
+      <h2>Jours 11-13 – Croisière Komodo 🛥️</h2>
+      <p>Bateaux, dragons, snorkeling, coucher de soleil.</p>
+      <p class="comment">Le dragon de Komodo avait l’air sympa. Ou affamé. Pas sûr.</p>
+    </div>
+    <div class="day">
+      <h2>Jour 14 – Jeudi 2 octobre</h2>
+      <p>Temple Uluwatu + spectacle de danse traditionnelle.</p>
+      <p class="comment">Élise applaudit, Robin s’endort discrètement 💤.</p>
+    </div>
+    <div class="day">
+      <h2>Jour 15 – Vendredi 3 octobre</h2>
+      <p>✈️ Retour Singapour, puis avion du retour.</p>
+      <p class="comment">Snif. Fin des nasi goreng à volonté 🍚😭.</p>
+    </div>
+  </div>
+
+  <!-- Carrousel -->
+  <div class="carousel">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Tegalalang_Rice_Terrace_2018.jpg/640px-Tegalalang_Rice_Terrace_2018.jpg" class="active" alt="Rizières de Bali">
+    <div class="caption">🌾 Les magnifiques rizières de Bali</div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Kelingking_Beach_Nusa_Penida.jpg/640px-Kelingking_Beach_Nusa_Penida.jpg" alt="Plage Bali">
+    <div class="caption">🏖️ Plage paradisiaque à Nusa Penida</div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Monkey_Ubud_Bali.jpg/640px-Monkey_Ubud_Bali.jpg" alt="Singe Ubud">
+    <div class="caption">🐒 Rencontre avec les singes d’Ubud</div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Scuba_diving_with_sharks.jpg/640px-Scuba_diving_with_sharks.jpg" alt="Plongée requins">
+    <div class="caption">🤿 Plongée avec des requins (adrénaline garantie !)</div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Komodo_dragon_at_Komodo_National_Park.jpg/640px-Komodo_dragon_at_Komodo_National_Park.jpg" alt="Dragon Komodo">
+    <div class="caption">🦎 Le redoutable dragon de Komodo</div>
+  </div>
+
+  <footer>
+    <p>🌺 Élise & Robin en Indonésie – 2025 🌺</p>
+  </footer>
+
+  <script>
+    // Script pour faire défiler le carrousel
+    const images = document.querySelectorAll('.carousel img');
+    const captions = document.querySelectorAll('.carousel .caption');
+    let current = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.remove('active');
+        captions[i].style.display = "none";
+        if (i === index) {
+          img.classList.add('active');
+          captions[i].style.display = "block";
+        }
+      });
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    showImage(current);
+    setInterval(nextImage, 4000);
+  </script>
+</body>
+</html>
