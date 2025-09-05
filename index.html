@@ -1,162 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Élise & Robin - Bali 2025 🎉</title>
-  <style>
-    @keyframes rainbow-text {
-      0% { color: red; }
-      25% { color: orange; }
-      50% { color: green; }
-      75% { color: blue; }
-      100% { color: purple; }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    body {
-      font-family: Calibri, sans-serif;
-      background: linear-gradient(to bottom right, #fff5f8, #ffe6fa);
-      margin: 0;
-      padding: 0 20px;
-      color: #333;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 2.8em;
-      animation: rainbow-text 5s infinite;
-    }
-
-    .intro {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .intro img {
-      width: 320px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(255, 105, 180, 0.5);
-      animation: bounce 2s infinite;
-    }
-
-    .jour {
-      margin: 20px 0;
-      padding: 10px;
-      background-color: #fff0f0;
-      border-left: 8px dashed #f28e8e;
-      border-radius: 12px;
-    }
-
-    .jour h2 {
-      margin: 0;
-      color: #d62828;
-    }
-
-    .carrousel {
-      text-align: center;
-      margin: 50px 0;
-    }
-
-    .carrousel h2 {
-      color: #a23f99;
-    }
-
-    .carousel-container {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 10px;
-      scroll-snap-type: x mandatory;
-    }
-
-    .carousel-container img {
-      width: 300px;
-      border-radius: 12px;
-      scroll-snap-align: start;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .carousel-container img:hover {
-      transform: scale(1.05) rotate(-2deg);
-      box-shadow: 0 0 20px rgba(255, 192, 203, 0.7);
-    }
-
-    .surprise {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .surprise button {
-      background-color: #ff69b4;
-      color: white;
-      font-size: 1.2em;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 5px 0 #cc4c91;
-    }
-
-    .surprise button:hover {
-      background-color: #ff85c1;
-      transform: scale(1.05);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Le Voyage Fou d'Élise & Robin</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background-color: #fffaf0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #e91e63;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 20px;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        .carousel img {
+            height: 300px;
+            scroll-snap-align: center;
+            border-radius: 12px;
+        }
+        .lyrics {
+            background: #ffe0f0;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 2px solid #ff69b4;
+        }
+        .lyrics h2 {
+            color: #d81b60;
+        }
+        .lyrics pre {
+            text-align: left;
+            white-space: pre-wrap;
+            font-size: 1em;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+    </style>
 </head>
 <body>
+    <h1>🌴 Le Voyage Fou d'Élise & Robin 🌴</h1>
+    <p>Préparez vos valises, rangez vos tongs et checkez vos vaccins : voici l'aventure la plus déjantée entre rizières, dragons, scooters en panne et requins géants 🦈 !</p>
 
-  <div class="intro">
-    <h1>🌴 Le voyage ultra stylé d’Élise & Robin 🌴</h1>
-    <p>19 septembre – 3 octobre 2025</p>
-    <img src="couple.jpg" alt="Élise & Robin">
-  </div>
-
-  <div class="carrousel">
-    <h2>💖 Avant-goût tropical 💖</h2>
-    <div class="carousel-container">
-      <img src="villa.jpg" alt="Villa Bali">
-      <img src="plage.jpg" alt="Plage Bali">
-      <img src="komodo.jpg" alt="Dragons de Komodo">
-      <img src="bar.jpg" alt="Soirée Gili">
+    <div class="carousel">
+        <img src="gros_requin.jpg" alt="photo"><img src="nemo.jpg" alt="photo"><img src="singe.jpg" alt="photo"><img src="sunset.jpg" alt="photo"><img src="riziere.jpg" alt="photo"><img src="sun_rise.jpg" alt="photo">
     </div>
-  </div>
 
-  <div class="programme">
-    <div class="jour"><h2>Vendredi 19 septembre – CANGGU</h2><p>Vol ✈️, arrivée à Bali → soirée détente à Canggu avec vue sur les rizières !</p></div>
-    <div class="jour"><h2>Samedi 20 septembre – CANGGU</h2><p>Repos bien mérité, exploration de Canggu/Kuta/Seminyak et apéro au coucher de soleil 🍹</p></div>
-    <div class="jour"><h2>Dimanche 21 septembre – CANGGU</h2><p>Encore Canggu & co, peut-être Mont Batur si motivation 😅</p></div>
-    <div class="jour"><h2>Lundi 22 septembre – UBUD</h2><p>Direction Ubud → rizières 🌿, temples et zen attitude</p></div>
-    <div class="jour"><h2>Mardi 23 septembre – UBUD</h2><p>Yoga + nature + petit café stylé</p></div>
-    <div class="jour"><h2>Mercredi 24 septembre – GILI</h2><p>Départ pour Gili Meno → déjeuner à "ma cantine" 🏝️</p></div>
-    <div class="jour"><h2>Jeudi 25 septembre – GILI</h2><p>Journée farniente et pizza chez Reginaaaaaa 🍕</p></div>
-    <div class="jour"><h2>Vendredi 26 septembre – GILI</h2><p>Petit run, chill, soirée pieds dans le sable 🌙</p></div>
-    <div class="jour"><h2>Samedi 27 septembre – FLORES / GILI</h2><p>Retour express des Gili et vol pour Flores 😴</p></div>
-    <div class="jour"><h2>Dimanche 28 septembre – FLORES / JAV</h2><p>Plongée à Labuan Bajo 🤿 avec des GROS REQUINS 🦈🦈🦈 !!</p></div>
-    <div class="jour"><h2>Lundi 29 septembre – FLORES</h2><p>Cruise Komodo 🦎, snorkeling, dragons, paysages de ouf</p></div>
-    <div class="jour"><h2>Mardi 30 septembre – FLORES</h2><p>Encore croisière → îles désertes, plages, cocktails 🍍</p></div>
-    <div class="jour"><h2>Mercredi 1er octobre – ULUWATU</h2><p>Retour Bali → Uluwatu, temple & beach club 😎</p></div>
-    <div class="jour"><h2>Jeudi 2 octobre – ULUWATU</h2><p>Repos, surf, dernier sunset magique 🌅</p></div>
-    <div class="jour"><h2>Vendredi 3 octobre – ✈️ Retour</h2><p>Vol retour pour Singapour 💼</p></div>
-  </div>
+    <div class="lyrics">
+        <h2>🎶 Les Paroles du Voyage 🎶</h2>
+        <pre>
+[Couplet 1]
+Vendredi décollage, tongs aux pieds, sac à dos ✈️
+Bali, prépare-toi, on débarque incognito 😎
+Canggu direct ambiance, villa, piscine miroir
+On fait les stars... et on crame dès le premier soir 🔥
 
-  <div class="carrousel">
-    <h2>📸 After party en images 📸</h2>
-    <div class="carousel-container">
-      <img src="villa.jpg" alt="Villa Bali">
-      <img src="plage.jpg" alt="Plage Bali">
-      <img src="komodo.jpg" alt="Dragons de Komodo">
-      <img src="bar.jpg" alt="Soirée Gili">
+[Refrain]
+C’est le voyage fou d’Élise et Robin 🎒
+Scooters, singes et jus de pastèque le matin 🐒🥤
+Du spa à la jungle, du riz dans les chaussettes
+Et le WiFi ? Toujours en PLS, la totale disquette 📶💀
+
+[Couplet 2]
+À Ubud les singes sont plus vifs que nous 🐵
+Y’en a un qui mate notre snack, c’est foutu
+On grimpe un volcan, il est 4h du mat’ 🌋
+Robin en Crocs, et le guide : “C’est pas si plat…”
+
+[Refrain]
+C’est le voyage fou d’Élise et Robin 🗺️
+En mode warriors, mais fatigués dès le matin 😴
+À Gili on bulle, à Flores on dérive
+Le bateau ? 15h de secousses, le rêve devient vif 🚤🌪️
+
+[Pont]
+Des dragons qui se battent, des requins qui nagent fort 🦎🦈
+Des clowns dans l’eau (non, pas nous), des poissons multicolores 🐠
+Un warung paumé, un massage approximatif
+Et un bar à cocktails... très très créatif 🍹😳
+
+[Refrain final]
+C’est le voyage fou d’Élise et Robin 🎉
+On s’adapte, on improvise, on teste tout (même le durian) 🤢
+Des couchers de soleil, des routes sans fin
+Et surtout : des bides, des fails… et du fun sans frein 💥
+
+[Outro]
+Le retour approche, les valises font 100 kilos 🧳
+Mais dans nos têtes ? Que des souvenirs rigolos
+On reviendra peut-être... ou pas, on verra bien
+Mais Bali, c’était du sale. À la prochaine, cousin. 👋
+        </pre>
     </div>
-  </div>
-
-  <div class="surprise">
-    <button onclick="alert('SURPRISE ! 🥳 Tu viens de gagner un câlin balinais 🐒🌺')">🎁 Clique ici si t’es curieux…</button>
-  </div>
-
 </body>
 </html>
