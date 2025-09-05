@@ -29,7 +29,7 @@
             border-radius: 15px;
             padding: 20px;
             margin: 30px auto;
-            max-width: 700px;
+            max-width: 750px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .programme h3 {
@@ -42,18 +42,12 @@
         .programme li {
             margin: 8px 0;
         }
-        .main-image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin: 30px 0;
-        }
-        .main-image-container img {
+        .main-image {
             border-radius: 20px;
             max-width: 40%;
             height: auto;
             box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+            margin: 30px auto;
         }
         #audio-toggle {
             background-color: #cc0066;
@@ -64,6 +58,22 @@
             font-size: 24px;
             cursor: pointer;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            margin: 30px auto;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 20px;
+            scroll-snap-type: x mandatory;
+            margin: 40px auto;
+            max-width: 95vw;
+        }
+        .carousel img {
+            height: 250px;
+            border-radius: 15px;
+            scroll-snap-align: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -72,30 +82,42 @@
 <h1>🌴 Le voyage fou d'Élise & Robin 🐒</h1>
 <h2>Du 19 septembre au 3 octobre 2025</h2>
 
-<div class="main-image-container">
-    <img src="couple.jpg" alt="Couple à la plage">
-    <button id="audio-toggle">🎵</button>
-</div>
+<img src="couple.jpg" alt="Couple à la plage" class="main-image">
+<br>
+<button id="audio-toggle">🎵</button>
 
 <div class="programme">
-    <h3>📅 Programme du voyage</h3>
+    <h3>📅 Programme détaillé</h3>
     <ul>
-        <li>🛵 Vendredi 19 septembre : CANGGU</li>
-        <li>🏄 Samedi 20 septembre : CANGGU</li>
-        <li>🍹 Dimanche 21 septembre : CANGGU</li>
-        <li>🌿 Lundi 22 septembre : UBUD</li>
-        <li>🐒 Mardi 23 septembre : UBUD</li>
-        <li>🏝️ Mercredi 24 septembre : GILI</li>
-        <li>🌊 Jeudi 25 septembre : GILI</li>
-        <li>🍍 Vendredi 26 septembre : GILI</li>
-        <li>🛥️ Samedi 27 septembre : FLORES GILI</li>
-        <li>🦈 Dimanche 28 septembre : FLORES JAV – plongée avec des gros requins !</li>
-        <li>🗻 Lundi 29 septembre : FLORES</li>
-        <li>🦎 Mardi 30 septembre : FLORES</li>
-        <li>🌇 Mercredi 1er octobre : ULUWATU</li>
-        <li>🧘‍♀️ Jeudi 2 octobre : ULUWATU</li>
-        <li>✈️ Vendredi 3 octobre : Avion</li>
+        <li>🌞 Vendredi 19 septembre : CANGGU - ✈️ Arrivée à Bali, soirée Craggio</li>
+        <li>🍹 Samedi 20 septembre : CANGGU - Plage, brunch, soirée Vietor/Seminyak</li>
+        <li>🧘‍♀️ Dimanche 21 septembre : CANGGU - Brunch et départ vers UBUD</li>
+        <li>🐒 Lundi 22 septembre : UBUD - Singes, rizières et temple</li>
+        <li>🌋 Mardi 23 septembre : UBUD - Mont Batur à l’aube (ouille le réveil)</li>
+        <li>🏝️ Mercredi 24 septembre : GILI - Arrivée à Gili, rencontre avec les géants 🐢</li>
+        <li>🧘 Jeudi 25 septembre : GILI - Yoga et snorkeling entre deux Bintangs</li>
+        <li>🍉 Vendredi 26 septembre : GILI - Détente, plage, plongée 🐠</li>
+        <li>✈️ Samedi 27 septembre : GILI ➡️ FLORES - Avion et bière 🍻</li>
+        <li>🦈 Dimanche 28 septembre : FLORES - Plongée avec des gros requins (gros stress, gros kif)</li>
+        <li>🥾 Lundi 29 septembre : FLORES - Rando et criques secrètes</li>
+        <li>🐉 Mardi 30 septembre : FLORES - Dragon de Komodo et jurassic vibes</li>
+        <li>🏄 Mercredi 1er octobre : ULUWATU - Retour Bali, plage et chill</li>
+        <li>🛕 Jeudi 2 octobre : ULUWATU - Temple, beach club et mojitos</li>
+        <li>😢 Vendredi 3 octobre : ✈️ Retour - Fin du rêve balinais</li>
     </ul>
+</div>
+
+<div class="carousel">
+    <img src="sunrise.jpg" alt="Sunrise">
+    <img src="requins.jpg" alt="Requins">
+    <img src="nemo.jpg" alt="Nemo">
+    <img src="singe.jpg" alt="Singe">
+    <img src="riziere.jpg" alt="Rizière">
+    <img src="sunset.jpg" alt="Sunset">
+    <img src="komodo.jpg" alt="Komodo">
+    <img src="villa.jpg" alt="Villa">
+    <img src="bar.jpg" alt="Bar à Gili">
+    <img src="plage.jpg" alt="Plage">
 </div>
 
 <audio id="bg-music" loop>
