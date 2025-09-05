@@ -3,46 +3,69 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Le voyage fou d’Élise & Robin 🌴🐒</title>
+  <title>Élise & Robin - Bali 2025 🎉</title>
   <style>
+    @keyframes rainbow-text {
+      0% { color: red; }
+      25% { color: orange; }
+      50% { color: green; }
+      75% { color: blue; }
+      100% { color: purple; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
     body {
       font-family: Calibri, sans-serif;
-      background: #fff5f8;
+      background: linear-gradient(to bottom right, #fff5f8, #ffe6fa);
       margin: 0;
       padding: 0 20px;
       color: #333;
     }
+
     h1 {
       text-align: center;
-      color: #e63946;
+      font-size: 2.8em;
+      animation: rainbow-text 5s infinite;
     }
+
     .intro {
       text-align: center;
       margin-bottom: 30px;
     }
+
     .intro img {
-      width: 300px;
+      width: 320px;
       border-radius: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.5);
+      animation: bounce 2s infinite;
     }
+
     .jour {
       margin: 20px 0;
       padding: 10px;
       background-color: #fff0f0;
-      border-left: 5px solid #f28e8e;
-      border-radius: 8px;
+      border-left: 8px dashed #f28e8e;
+      border-radius: 12px;
     }
+
     .jour h2 {
       margin: 0;
       color: #d62828;
     }
+
     .carrousel {
       text-align: center;
-      margin: 40px 0;
+      margin: 50px 0;
     }
+
     .carrousel h2 {
-      color: #457b9d;
+      color: #a23f99;
     }
+
     .carousel-container {
       display: flex;
       overflow-x: auto;
@@ -50,24 +73,51 @@
       padding: 10px;
       scroll-snap-type: x mandatory;
     }
+
     .carousel-container img {
       width: 300px;
       border-radius: 12px;
       scroll-snap-align: start;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .carousel-container img:hover {
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.7);
+    }
+
+    .surprise {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .surprise button {
+      background-color: #ff69b4;
+      color: white;
+      font-size: 1.2em;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #cc4c91;
+    }
+
+    .surprise button:hover {
+      background-color: #ff85c1;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
 
   <div class="intro">
-    <h1>Le voyage fou d’Élise & Robin 🌴🐒</h1>
+    <h1>🌴 Le voyage ultra stylé d’Élise & Robin 🌴</h1>
     <p>19 septembre – 3 octobre 2025</p>
     <img src="couple.jpg" alt="Élise & Robin">
   </div>
 
   <div class="carrousel">
-    <h2>Quelques aperçus avant l’aventure 💫</h2>
+    <h2>💖 Avant-goût tropical 💖</h2>
     <div class="carousel-container">
       <img src="villa.jpg" alt="Villa Bali">
       <img src="plage.jpg" alt="Plage Bali">
@@ -95,13 +145,17 @@
   </div>
 
   <div class="carrousel">
-    <h2>Souvenirs en images 📸</h2>
+    <h2>📸 After party en images 📸</h2>
     <div class="carousel-container">
       <img src="villa.jpg" alt="Villa Bali">
       <img src="plage.jpg" alt="Plage Bali">
       <img src="komodo.jpg" alt="Dragons de Komodo">
       <img src="bar.jpg" alt="Soirée Gili">
     </div>
+  </div>
+
+  <div class="surprise">
+    <button onclick="alert('SURPRISE ! 🥳 Tu viens de gagner un câlin balinais 🐒🌺')">🎁 Clique ici si t’es curieux…</button>
   </div>
 
 </body>
