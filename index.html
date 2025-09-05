@@ -3,110 +3,158 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le voyage fou d'Élise & Robin 🌴🐒</title>
+    <title>🌴 Le voyage fou d'Élise & Robin 🐒</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calibri:wght@400;700&display=swap">
     <style>
-    @keyframes pop {
-        0% { transform: scale(1); color: #ff3399; }
-        50% { transform: scale(1.2); color: #cc0066; }
-        100% { transform: scale(1); color: #ff3399; }
-    }
-    h1 {
-        animation: pop 2s ease-in-out infinite;
-    }
-    
         body {
+            font-family: 'Calibri', sans-serif;
             background-color: #ffe6f0;
-            font-family: Calibri, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
             text-align: center;
-            padding: 20px;
         }
         h1 {
-            color: #ff3399;
-            font-size: 2em;
+            color: #cc0066;
+            font-size: 3em;
+            animation: pop 1s ease-in-out infinite alternate;
+        }
+        @keyframes pop {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
         }
         h2 {
+            margin-top: 0;
             font-size: 1.2em;
-            color: #993366;
         }
         .carousel {
             display: flex;
             overflow-x: auto;
-            gap: 10px;
-            margin: 20px 0;
-            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+            scroll-snap-type: x mandatory;
         }
         .carousel img {
             height: 300px;
-            border-radius: 15px;
+            border-radius: 20px;
+            scroll-snap-align: center;
         }
-        .day {
-            margin: 10px 0;
+        .programme {
+            margin: 40px auto;
+            max-width: 700px;
+            background: #fff0f5;
+            border: 2px dashed #cc0066;
+            padding: 20px;
+            border-radius: 20px;
         }
-        .surprise {
-            margin-top: 30px;
+        .programme h3 {
+            margin-bottom: 10px;
         }
-        .surprise button {
-            background-color: #ff3399;
+        .programme ul {
+            list-style: none;
+            padding: 0;
+        }
+        .programme li {
+            margin: 5px 0;
+        }
+        #audio-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #cc0066;
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            border-radius: 10px;
+            border-radius: 50%;
+            padding: 12px 16px;
+            font-size: 20px;
             cursor: pointer;
-        }
-        .surprise button:hover {
-            background-color: #cc0066;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            z-index: 1000;
         }
     </style>
-    <audio autoplay loop>
-        <source src="elise.mp3" type="audio/mpeg">
-        Ton navigateur ne supporte pas l'audio HTML5.
-    </audio>
 </head>
 <body>
-    <h1>🌴 Le voyage fou d'Élise & Robin 🐒</h1>
-    <h2>Du 19 septembre au 3 octobre 2025</h2>
 
-    <div class="carousel" style="justify-content: center;">
-        <img src="couple.jpg" alt="Couple">
-    </div>
+<h1>🌴 Le voyage fou d'Élise & Robin 🐒</h1>
+<h2>Du 19 septembre au 3 octobre 2025</h2>
 
-    <div class="programme">
-        <h2>📅 Programme du voyage :</h2>
-        <div class="day">🌞 Vendredi 19 septembre : CANGGU - ✈️ Arrivée à Bali, soirée Craggio</div>
-        <div class="day">🍹 Samedi 20 septembre : CANGGU - Plage, brunch, soirée Vietor/Seminyak</div>
-        <div class="day">🧘‍♀️ Dimanche 21 septembre : CANGGU - Brunch et départ vers UBUD</div>
-        <div class="day">🐒 Lundi 22 septembre : UBUD - Singes, rizières et temple</div>
-        <div class="day">🌋 Mardi 23 septembre : UBUD - Mont Batur à l’aube (ouille le réveil)</div>
-        <div class="day">🏝️ Mercredi 24 septembre : GILI - Arrivée à Gili, rencontre avec les géants 🐢</div>
-        <div class="day">🧘 Jeudi 25 septembre : GILI - Yoga et snorkeling entre deux Bintangs</div>
-        <div class="day">🍉 Vendredi 26 septembre : GILI - Détente, plage, plongée 🐠</div>
-        <div class="day">✈️ Samedi 27 septembre : GILI ➡️ FLORES - Avion et bière 🍻</div>
-        <div class="day">🦈 Dimanche 28 septembre : FLORES - Plongée avec des gros requins (gros stress, gros kif)</div>
-        <div class="day">🥾 Lundi 29 septembre : FLORES - Rando et criques secrètes</div>
-        <div class="day">🐉 Mardi 30 septembre : FLORES - Dragon de Komodo et jurassic vibes</div>
-        <div class="day">🏄 Mercredi 1er octobre : ULUWATU - Retour Bali, plage et chill</div>
-        <div class="day">🛕 Jeudi 2 octobre : ULUWATU - Temple, beach club et mojitos</div>
-        <div class="day">😢 Vendredi 3 octobre : ✈️ Retour - Fin du rêve balinais</div>
-    </div>
+<div class="carousel">
+    <img src="couple.jpg" alt="Couple à la plage">
+</div>
 
-    <div class="carousel">
-        <img src="komodo.jpg" alt="Dragons de Komodo">
-        <img src="villa.jpg" alt="Villa">
-        <img src="bar.jpg" alt="Bar à Gili">
-        <img src="couple.jpg" alt="Couple sur la plage">
-        <img src="plage.jpg" alt="Plage">
-        <img src="singe.jpg" alt="Singe">
-        <img src="riziere.jpg" alt="Rizière">
-        <img src="Requins.jpg" alt="Requins">
-        <img src="nemo.jpg" alt="Nemo">
-        <img src="sunrise.jpg" alt="Sunrise">
-        <img src="sunset.jpg" alt="Coucher de soleil">
-    </div>
+<div class="programme">
+    <h3>📅 Programme de notre aventure :</h3>
+    <ul>
+        <li>Vendredi 19 septembre : CANGGU</li>
+        <li>Samedi 20 septembre : CANGGU</li>
+        <li>Dimanche 21 septembre : CANGGU</li>
+        <li>Lundi 22 septembre : UBUD</li>
+        <li>Mardi 23 septembre : UBUD</li>
+        <li>Mercredi 24 septembre : GILI</li>
+        <li>Jeudi 25 septembre : GILI</li>
+        <li>Vendredi 26 septembre : GILI</li>
+        <li>Samedi 27 septembre : FLORES GILI</li>
+        <li>Dimanche 28 septembre : FLORES JAV – on plonge avec des GROS REQUINS 🦈</li>
+        <li>Lundi 29 septembre : FLORES</li>
+        <li>Mardi 30 septembre : FLORES</li>
+        <li>Mercredi 1er octobre : ULUWATU</li>
+        <li>Jeudi 2 octobre : ULUWATU</li>
+        <li>Vendredi 3 octobre : Avion ✈️</li>
+    </ul>
+</div>
 
-    <div class="surprise">
-        <button onclick="window.open('https://www.youtube.com/watch?v=oXMCPiK5WFM')">🎁 Clique pour une surprise !</button>
-    </div>
+<div class="carousel">
+    <img src="sunrise.jpg" alt="sunrise">
+    <img src="gros_requins.jpg" alt="Requins">
+    <img src="nemo.jpg" alt="nemo">
+    <img src="singe.jpg" alt="Singe">
+    <img src="riziere.jpg" alt="Rizière">
+    <img src="sunset.jpg" alt="Sunset pool">
+    <img src="komodo.jpg" alt="Dragons de Komodo">
+    <img src="villa.jpg" alt="Villa avec piscine">
+    <img src="bar.jpg" alt="Bar à Gili">
+    <img src="plage.jpg" alt="Plage déserte">
+</div>
+
+<audio id="bg-music" loop>
+  <source src="elise.mp3" type="audio/mpeg">
+  Ton navigateur ne supporte pas l'audio HTML5.
+</audio>
+
+<!-- Bouton audio -->
+<button id="audio-toggle">🎵</button>
+
+<!-- Bouton surprise -->
+<div style="margin-top: 40px;">
+    <a href="https://www.youtube.com/watch?v=oXMCPiK5WFM" target="_blank">
+        <button style="padding: 15px 25px; font-size: 18px; background-color: #ff66b2; border: none; border-radius: 10px; color: white; cursor: pointer;">
+            🎁 Clique ici pour une surprise magique
+        </button>
+    </a>
+</div>
+
+<script>
+  const audio = document.getElementById("bg-music");
+  const toggleBtn = document.getElementById("audio-toggle");
+
+  window.addEventListener("load", () => {
+    audio.play().then(() => {
+      toggleBtn.textContent = "🔊";
+    }).catch(() => {
+      console.log("Lecture auto bloquée.");
+    });
+  });
+
+  toggleBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      toggleBtn.textContent = "🔊";
+    } else {
+      audio.pause();
+      toggleBtn.textContent = "🎵";
+    }
+  });
+</script>
+
 </body>
 </html>
