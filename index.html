@@ -3,7 +3,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>🌴 Le voyage fou d'Elise & Robin 🐒</title>
+    <title>🌴 Le voyage fou d'Élise & Robin 🐒</title>
     <style>
         body {
             font-family: Calibri, sans-serif;
@@ -11,6 +11,7 @@
             margin: 0;
             padding: 20px;
             text-align: center;
+            overflow-x: hidden;
         }
         h1 {
             font-size: 3em;
@@ -89,22 +90,29 @@
 <div class="programme">
     <h3>📅 Programme détaillé</h3>
     <ul>
-        <li>🌞 Vendredi 19 septembre : CANGGU - ✈️ Arrivée à Bali, soirée CANGGU</li>
-        <li>🍹 Samedi 20 septembre : CANGGU - Plage, brunch, soirée Kuta/Seminyak</li>
+        <li>🌞 Vendredi 19 septembre : CANGGU - ✈️ Arrivée à Bali, soirée Craggio</li>
+        <li>🍹 Samedi 20 septembre : CANGGU - Plage, brunch, soirée Vietor/Seminyak</li>
         <li>🧘‍♀️ Dimanche 21 septembre : CANGGU - Brunch et départ vers UBUD</li>
-        <li>🐒 Lundi 22 septembre : UBUD - Singes, rizières, Yoga et temple</li>
+        <li>🐒 Lundi 22 septembre : UBUD - Singes, rizières et temple</li>
         <li>🌋 Mardi 23 septembre : UBUD - Mont Batur à l’aube (ouille le réveil)</li>
-        <li>🏝️ Mercredi 24 septembre : GILI - Arrivée à Gili, rencontre avec les tortues🐢</li>
-        <li>🧘 Jeudi 25 septembre : GILI - Snorkeling entre deux Bintangs, hotel à 6 euros la nuit </li>
-        <li>🍉 Vendredi 26 septembre : GILI - Détente, plage, repas à la cantine pour 1 euro 🐠</li>
+        <li>🏝️ Mercredi 24 septembre : GILI - Arrivée à Gili, rencontre avec les géants 🐢</li>
+        <li>🧘 Jeudi 25 septembre : GILI - Yoga et snorkeling entre deux Bintangs</li>
+        <li>🍉 Vendredi 26 septembre : GILI - Détente, plage, plongée 🐠</li>
         <li>✈️ Samedi 27 septembre : GILI ➡️ FLORES - Avion et bière 🍻</li>
-        <li>🦈 Dimanche 28 septembre : FLORES - Plongée avec des gros requins (gros stress, gros kiff)</li>
+        <li>🦈 Dimanche 28 septembre : FLORES - Plongée avec des gros requins (gros stress, gros kif)</li>
         <li>🥾 Lundi 29 septembre : FLORES - Rando et criques secrètes</li>
         <li>🐉 Mardi 30 septembre : FLORES - Dragon de Komodo et jurassic vibes</li>
         <li>🏄 Mercredi 1er octobre : ULUWATU - Retour Bali, plage et chill</li>
         <li>🛕 Jeudi 2 octobre : ULUWATU - Temple, beach club et mojitos</li>
-        <li>😢 Vendredi 3 octobre : ✈️ Retour - Fin du rêve balinais - Singapour trip </li>
+        <li>😢 Vendredi 3 octobre : ✈️ Retour - Fin du rêve balinais</li>
     </ul>
+</div>
+
+<div style="margin: 30px;">
+    <button onclick="window.open('https://www.youtube.com/watch?v=oXMCPiK5WFM', '_blank')"
+        style="padding: 15px 30px; font-size: 20px; background-color: gold; color: black; border: 2px solid #cc0066; border-radius: 10px; cursor: pointer;">
+        🎁 Clique pour une surprise !
+    </button>
 </div>
 
 <div class="carousel">
@@ -120,18 +128,16 @@
     <img src="plage.jpg" alt="Plage">
 </div>
 
-<br>
-<div style="margin: 30px;"><button onclick="window.open('https://www.youtube.com/watch?v=oXMCPiK5WFM', '_blank')" style="margin: 30px auto; padding: 15px 30px; font-size: 20px; background-color: gold; color: black; border: 2px solid #cc0066; border-radius: 10px; cursor: pointer;">🎁 Clique pour une surprise !</button></div>
-
 <audio id="bg-music" loop>
   <source src="elise.mp3" type="audio/mpeg">
   Ton navigateur ne supporte pas l'audio HTML5.
 </audio>
 
+<canvas id="canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;"></canvas>
+
 <script>
   const audio = document.getElementById("bg-music");
   const toggleBtn = document.getElementById("audio-toggle");
-
   window.addEventListener("load", () => {
     audio.play().then(() => {
       toggleBtn.textContent = "🔊";
@@ -139,7 +145,6 @@
       console.log("Lecture auto bloquée.");
     });
   });
-
   toggleBtn.addEventListener("click", () => {
     if (audio.paused) {
       audio.play();
@@ -150,167 +155,104 @@
     }
   });
 
-// 🎉 Ajout de confettis
-let confettis = [];
-function Confetti() {
-  this.x = Math.random() * canvas.width;
-  this.y = Math.random() * canvas.height;
-  this.size = Math.random() * 6 + 4;
-  this.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
-  this.speed = Math.random() * 1 + 0.5;
-}
-Confetti.prototype.update = function() {
-  this.y += this.speed;
-  if (this.y > canvas.height) this.y = -10;
-};
-Confetti.prototype.draw = function() {
-  ctx.beginPath();
-  ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-  ctx.fillStyle = this.color;
-  ctx.fill();
-};
-
-for (let i = 0; i < 100; i++) confettis.push(new Confetti());
-
-function animateConfetti() {
-  confettis.forEach(c => {
-    c.update();
-    c.draw();
-  });
-}
-const originalAnimate = animateFireworks;
-animateFireworks = function() {
-  requestAnimationFrame(animateFireworks);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  animateConfetti();
-  if (Math.random() < 0.05) {
-    for (let i = 0; i < 20; i++) {
-      fireworks.push(new Firework());
-    }
-  }
-  fireworks.forEach((f, index) => {
-    f.update();
-    f.draw();
-    if (f.alpha <= 0) fireworks.splice(index, 1);
-  });
-};
-animateFireworks();
-</script>
-
-
-<canvas id="fireworks-canvas"></canvas>
-
-<script>
-  // Simple feu d'artifice JS
-  const canvas = document.getElementById("fireworks-canvas");
+  const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
-  canvas.style.position = "fixed";
-  canvas.style.top = 0;
-  canvas.style.left = 0;
-  canvas.style.zIndex = -1;
-  canvas.style.pointerEvents = "none";
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  function random(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-
-  function Firework() {
-    this.x = canvas.width / 2;
-    this.y = canvas.height;
-    this.sx = random(-5, 5);
-    this.sy = random(-12, -8);
-    this.gravity = 0.2;
-    this.alpha = 1;
-    this.radius = 3;
-    this.color = `hsl(${random(0, 360)}, 100%, 60%)`;
-  }
-
-  Firework.prototype.update = function () {
-    this.x += this.sx;
-    this.y += this.sy;
-    this.sy += this.gravity;
-    this.alpha -= 0.015;
-  };
-
-  Firework.prototype.draw = function () {
-    ctx.globalAlpha = this.alpha;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = this.color;
-    ctx.fill();
-  };
-
-  let fireworks = [];
-
-  function animateFireworks() {
-    requestAnimationFrame(animateFireworks);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    if (Math.random() < 0.05) {
-      for (let i = 0; i < 20; i++) {
-        fireworks.push(new Firework());
-      }
-    }
-
-    fireworks.forEach((f, index) => {
-      f.update();
-      f.draw();
-      if (f.alpha <= 0) fireworks.splice(index, 1);
+  let confetti = [];
+  for (let i = 0; i < 200; i++) {
+    confetti.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 6 + 4,
+      d: Math.random() * 200,
+      color: `hsl(${Math.random() * 360}, 100%, 70%)`,
+      tilt: Math.floor(Math.random() * 10) - 10,
+      tiltAngleIncremental: (Math.random() * 0.07) + .05,
+      tiltAngle: 0
     });
   }
 
-  animateFireworks();
-
-// 🎉 Ajout de confettis
-let confettis = [];
-function Confetti() {
-  this.x = Math.random() * canvas.width;
-  this.y = Math.random() * canvas.height;
-  this.size = Math.random() * 6 + 4;
-  this.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
-  this.speed = Math.random() * 1 + 0.5;
-}
-Confetti.prototype.update = function() {
-  this.y += this.speed;
-  if (this.y > canvas.height) this.y = -10;
-};
-Confetti.prototype.draw = function() {
-  ctx.beginPath();
-  ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-  ctx.fillStyle = this.color;
-  ctx.fill();
-};
-
-for (let i = 0; i < 100; i++) confettis.push(new Confetti());
-
-function animateConfetti() {
-  confettis.forEach(c => {
-    c.update();
-    c.draw();
-  });
-}
-const originalAnimate = animateFireworks;
-animateFireworks = function() {
-  requestAnimationFrame(animateFireworks);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  animateConfetti();
-  if (Math.random() < 0.05) {
-    for (let i = 0; i < 20; i++) {
-      fireworks.push(new Firework());
-    }
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    confetti.forEach((c, i) => {
+      ctx.beginPath();
+      ctx.lineWidth = c.r / 2;
+      ctx.strokeStyle = c.color;
+      ctx.moveTo(c.x + c.tilt + c.r / 4, c.y);
+      ctx.lineTo(c.x + c.tilt, c.y + c.tilt + c.r / 4);
+      ctx.stroke();
+    });
+    update();
   }
-  fireworks.forEach((f, index) => {
-    f.update();
-    f.draw();
-    if (f.alpha <= 0) fireworks.splice(index, 1);
-  });
-};
-animateFireworks();
-</script>
-</body>
-</html>
 
+  function update() {
+    confetti.forEach((c, i) => {
+      c.tiltAngle += c.tiltAngleIncremental;
+      c.y += (Math.cos(c.d) + 3 + c.r / 2) / 2;
+      c.tilt = Math.sin(c.tiltAngle - i / 3) * 15;
+      if (c.y > canvas.height) {
+        c.x = Math.random() * canvas.width;
+        c.y = -10;
+      }
+    });
+  }
+
+  (function loop() {
+    draw();
+    requestAnimationFrame(loop);
+  })();
+
+// Feux d'artifice 🎆
+let fireworks = [];
+
+function createFirework() {
+  const x = Math.random() * canvas.width;
+  const y = Math.random() * canvas.height / 2;
+  for (let i = 0; i < 60; i++) {
+    fireworks.push({
+      x: x,
+      y: y,
+      radius: Math.random() * 2 + 1,
+      angle: Math.random() * 2 * Math.PI,
+      speed: Math.random() * 5 + 2,
+      alpha: 1,
+      decay: Math.random() * 0.02 + 0.01,
+      color: `hsl(${Math.floor(Math.random() * 360)}, 100%, 60%)`
+    });
+  }
+}
+
+setInterval(createFirework, 2000);
+
+function drawFireworks() {
+  fireworks.forEach((f, i) => {
+    const vx = Math.cos(f.angle) * f.speed;
+    const vy = Math.sin(f.angle) * f.speed;
+    f.x += vx;
+    f.y += vy;
+    f.alpha -= f.decay;
+
+    ctx.beginPath();
+    ctx.globalAlpha = f.alpha;
+    ctx.arc(f.x, f.y, f.radius, 0, Math.PI * 2);
+    ctx.fillStyle = f.color;
+    ctx.fill();
+  });
+
+  fireworks = fireworks.filter(f => f.alpha > 0);
+  ctx.globalAlpha = 1;
+}
+
+// intégration dans la boucle principale
+const oldLoop = loop;
+(function newLoop() {
+  draw();
+  drawFireworks();
+  requestAnimationFrame(newLoop);
+})();
+</script>
+
+</body>
 </html>
