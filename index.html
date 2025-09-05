@@ -149,6 +149,52 @@
       toggleBtn.textContent = "🎵";
     }
   });
+
+// 🎉 Ajout de confettis
+let confettis = [];
+function Confetti() {
+  this.x = Math.random() * canvas.width;
+  this.y = Math.random() * canvas.height;
+  this.size = Math.random() * 6 + 4;
+  this.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+  this.speed = Math.random() * 1 + 0.5;
+}
+Confetti.prototype.update = function() {
+  this.y += this.speed;
+  if (this.y > canvas.height) this.y = -10;
+};
+Confetti.prototype.draw = function() {
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+  ctx.fillStyle = this.color;
+  ctx.fill();
+};
+
+for (let i = 0; i < 100; i++) confettis.push(new Confetti());
+
+function animateConfetti() {
+  confettis.forEach(c => {
+    c.update();
+    c.draw();
+  });
+}
+const originalAnimate = animateFireworks;
+animateFireworks = function() {
+  requestAnimationFrame(animateFireworks);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  animateConfetti();
+  if (Math.random() < 0.05) {
+    for (let i = 0; i < 20; i++) {
+      fireworks.push(new Firework());
+    }
+  }
+  fireworks.forEach((f, index) => {
+    f.update();
+    f.draw();
+    if (f.alpha <= 0) fireworks.splice(index, 1);
+  });
+};
+animateFireworks();
 </script>
 
 
@@ -200,7 +246,7 @@
 
   function animateFireworks() {
     requestAnimationFrame(animateFireworks);
-    ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     if (Math.random() < 0.05) {
@@ -217,6 +263,52 @@
   }
 
   animateFireworks();
+
+// 🎉 Ajout de confettis
+let confettis = [];
+function Confetti() {
+  this.x = Math.random() * canvas.width;
+  this.y = Math.random() * canvas.height;
+  this.size = Math.random() * 6 + 4;
+  this.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+  this.speed = Math.random() * 1 + 0.5;
+}
+Confetti.prototype.update = function() {
+  this.y += this.speed;
+  if (this.y > canvas.height) this.y = -10;
+};
+Confetti.prototype.draw = function() {
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+  ctx.fillStyle = this.color;
+  ctx.fill();
+};
+
+for (let i = 0; i < 100; i++) confettis.push(new Confetti());
+
+function animateConfetti() {
+  confettis.forEach(c => {
+    c.update();
+    c.draw();
+  });
+}
+const originalAnimate = animateFireworks;
+animateFireworks = function() {
+  requestAnimationFrame(animateFireworks);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  animateConfetti();
+  if (Math.random() < 0.05) {
+    for (let i = 0; i < 20; i++) {
+      fireworks.push(new Firework());
+    }
+  }
+  fireworks.forEach((f, index) => {
+    f.update();
+    f.draw();
+    if (f.alpha <= 0) fireworks.splice(index, 1);
+  });
+};
+animateFireworks();
 </script>
 </body>
 </html>
