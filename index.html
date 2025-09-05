@@ -151,5 +151,74 @@
   });
 </script>
 
+
+<canvas id="fireworks-canvas"></canvas>
+
+<script>
+  // Simple feu d'artifice JS
+  const canvas = document.getElementById("fireworks-canvas");
+  const ctx = canvas.getContext("2d");
+  canvas.style.position = "fixed";
+  canvas.style.top = 0;
+  canvas.style.left = 0;
+  canvas.style.zIndex = -1;
+  canvas.style.pointerEvents = "none";
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function Firework() {
+    this.x = canvas.width / 2;
+    this.y = canvas.height;
+    this.sx = random(-5, 5);
+    this.sy = random(-12, -8);
+    this.gravity = 0.2;
+    this.alpha = 1;
+    this.radius = 3;
+    this.color = `hsl(${random(0, 360)}, 100%, 60%)`;
+  }
+
+  Firework.prototype.update = function () {
+    this.x += this.sx;
+    this.y += this.sy;
+    this.sy += this.gravity;
+    this.alpha -= 0.015;
+  };
+
+  Firework.prototype.draw = function () {
+    ctx.globalAlpha = this.alpha;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+  };
+
+  let fireworks = [];
+
+  function animateFireworks() {
+    requestAnimationFrame(animateFireworks);
+    ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if (Math.random() < 0.05) {
+      for (let i = 0; i < 20; i++) {
+        fireworks.push(new Firework());
+      }
+    }
+
+    fireworks.forEach((f, index) => {
+      f.update();
+      f.draw();
+      if (f.alpha <= 0) fireworks.splice(index, 1);
+    });
+  }
+
+  animateFireworks();
+</script>
 </body>
+</html>
+
 </html>
